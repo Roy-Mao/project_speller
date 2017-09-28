@@ -19,8 +19,3 @@ The challenge is to implement load, check, size, and unload as efficiently as po
 Within the default dictionary are 143,091 words, all of which must be loaded into memory! In fact, take a peek at that file to get a sense of its structure and size. Notice that every word in that file appears in lowercase. From top to bottom, the file is sorted lexicographically, with only one word per line (each of which ends with \n). No word is longer than 45 characters, and no word appears more than once.
 
 So that you can test your implementation of speller, we’ve also provided you with a whole bunch of texts, among them the script from Austin Powers: International Man of Mystery, a sound bite from Ralph Wiggum, three million bytes from Tolstoy, some excerpts from Machiavelli and Shakespeare, the entirety of the King James V Bible, and more.
-
-### Results
-Left = my code, right = staff solution (time in seconds): 💪
-
-![My code vs. staff solution](http://i.imgur.com/tdQTo5a.png)
