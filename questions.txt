@@ -1,0 +1,50 @@
+0.  What is pneumonoultramicroscopicsilicovolcanoconiosis??
+an invented long word said to mean a lung disease caused by inhaling very fine ash and sand dust.
+
+1.  According to its man page, what does getrusage do
+getrusage() returns resource usage measures for its first argument. In this case, it returns the resource
+usage statistics for the calling process. RUSAGE_SELF.
+
+2. Per that same man page, how many members are in a variable of type struct rusage.
+There are 16 fields/members in the variable of type struct rusage.
+
+
+3. Why do you think we pass before and after by reference (instead of by value) to calculate,
+   even though we’re not changing their contents?
+   We pass before and after by reference (instead of by value) to the  function "calculate" 
+   because passing large structs by value is slow and takes up a lot of memory. Also, if we
+   place the copied value on stack, there is a potential risk of stack overflow.
+  
+   
+4.  Explain as precisely as possible, in a paragraph or more, how main goes about reading 
+    words from a file. In other words, convince us that you indeed understand how that function’s 
+    for loop works.
+    How does main() spell-check each word in the text. 
+    1.It uses fgetc() to get each char in the text. If the char is alphabetic or apostrophe and 
+    within the maximum length, then add this char to the variable word.
+    2.If words is longer than the maximum string length, then skip over the remaining alphabetic
+    strings and set index to 0 for new word.
+    3.If c encounters a digital value, then skip over the remaining alphanumeric value and set index
+    to 0 for new word
+    4.if the c is not any alphabetic value or is not aspostrophe or digit, then we can safely say
+    that we reach the end of the word and can add the terminator '\0' at the end of the variable
+    word.
+    5. Then we add up the counter by 1, check the word spelling and set index to 0 for next word.
+    
+    
+    
+5.  Why do you think we used fgetc to read each word’s characters one at a time rather than use 
+    fscanf with a format string like "%s" to read whole words at a time? Put another way, what 
+    problems might arise by relying on fscanf alone?
+    fgetc will validate every character in our word, including if there is , or & or # etc.
+    However,fscanf only care about space and enter return, which can not garantee that the 
+    work being entered is valid, for example "na,me" should not be treated as a valid word.
+
+
+6.  Why do you think we declared the parameters for check and load as const (which means "constant")?
+    const pointer means that the programmer can not change the value that the pointer points to. 
+    for function like load and check, we as programmers are not expected to change the value in the
+    file, or the array list. Therefore, it is better to use const pointer to prevent accidental change
+    made to the word array or the file.
+
+
